@@ -31,6 +31,14 @@ static unsafe partial class UnsafeNativeMethods
     public static partial void ImpellerDisplayListBuilderRestoreRaw(IntPtr builder);
 
     [UnmanagedCallConv(CallConvs = [typeof(CallConvStdcall)])]
+    [LibraryImport("impeller", EntryPoint = "ImpellerDisplayListBuilderTranslate")]
+    public static partial void ImpellerDisplayListBuilderTranslateRaw(IntPtr builder, float x_translation, float y_translation);
+
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvStdcall)])]
+    [LibraryImport("impeller", EntryPoint = "ImpellerDisplayListBuilderScale")]
+    public static partial void ImpellerDisplayListBuilderScaleRaw(IntPtr builder, float x_scale, float y_scale);
+
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvStdcall)])]
     [LibraryImport("impeller", EntryPoint = "ImpellerDisplayListBuilderClipRect")]
     public static partial void ImpellerDisplayListBuilderClipRectRaw(IntPtr builder, ImpellerRect* rect, ImpellerClipOperation op);
 
