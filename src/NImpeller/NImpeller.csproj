@@ -9,6 +9,13 @@
         <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
+    <ItemGroup>
+        <!-- basin's Impeller renderer builds its frame path on the raw IntPtr
+             imports (UnsafeNativeMethods.Raw.cs) so it can stay allocation-free;
+             the public wrapper API stays SafeHandle-shaped for everyone else. -->
+        <InternalsVisibleTo Include="Basin.Render.Impeller" />
+    </ItemGroup>
+
     <PropertyGroup>
         <GeneratedBindingsFile>$(MSBuildProjectDirectory)/Generated/Bindings.g.cs</GeneratedBindingsFile>
         <RootDirectory>$(MSBuildProjectDirectory)/../..</RootDirectory>
